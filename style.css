@@ -115,34 +115,111 @@ body {
   }
 }
 
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  background-color: #808080;
+}
+
 .form__label {
   position: relative;
+  display: block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.form__check {
+  visibility: hidden;
 }
 
 .form__check:checked + .form__check-fake::before {
   display: block;
 }
 
+.form__check:checked + .form__check-fake::after {
+  display: block;
+}
+
 .form__check-fake {
-  position: absolute;
-  top: 0;
-  right: -10px;
+  position: relative;
+  margin-top: 10px;
   width: 30px;
   height: 30px;
   background-color: #f90;
   border: 1px solid #995c00;
+  border-radius: 5px;
 }
 
-.form__check-fake::before {
+.form__check-fake::before, .form__check-fake::after {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   display: none;
-  width: 20px;
-  height: 20px;
+  width: 5px;
+  height: 25px;
   background-color: #303030;
   border-radius: 10px;
+}
+
+.form__check-fake::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.form__check-fake::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.form__beauty {
+  visibility: hidden;
+}
+
+.form__beauty:checked + .form__beauty-fake::before {
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+
+.form__beauty:checked + .form__beauty-fake::after {
+  background-color: #ffc266;
+}
+
+.form__beauty-fake {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #f90;
+  border: 1px solid #cc7a00;
+  border-radius: 20px;
+}
+
+.form__beauty-fake::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  background-color: #404040;
+  border-radius: 25px;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+}
+
+.form__beauty-fake::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 25px;
+  background-color: #cc7a00;
+  border-radius: 25px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }

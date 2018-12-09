@@ -83,39 +83,101 @@ body {
 }
 
 .form {
-    
+    display: flex;
+    padding: 20px;
+    background-color: #808080;
 
     &__label {
         position: relative;
+        display: block;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    &__check {
+        visibility: hidden;
+        &:checked + .form__check-fake::before {
+            display: block; 
+        }
+        &:checked + .form__check-fake::after {
+            display: block; 
+        }
+    }
 
-    }
-    &__check:checked + &__check-fake::before {
-       display: block; 
-    }
+
     &__check-fake {
-        position: absolute;
-        top: 0;
-        right: -10px;
+        position: relative;
+        // top: 0;
+        // right: -10px;
+        margin-top: 10px;
         width: 30px;
         height: 30px;
         background-color: #f90;
         border: 1px solid darken($color: #ff9900, $amount: 20%);
-        &::before {
+        border-radius: 5px;
+        &::before, &::after {
             content: '';
             position: absolute;
             top: 50%;
             left: 50%;
             display: none;
-            width: 20px;
-            height: 20px;
+            width: 5px;
+            height: 25px;
             background-color: #303030;
             border-radius: 10px;
+        }
+        &::before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        &::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    &__beauty {
+        visibility: hidden;
+        &:checked + .form__beauty-fake::before{
+            transform: translate(-100%, -50%);
+        }
+        &:checked + .form__beauty-fake::after{
+            background-color: lighten($color: #ff9900, $amount: 20%);
+
+        }
+    }
+    &__beauty-fake {
+        position: relative;
+        // top: 0;
+        // right: -30px;
+        width: 60px;
+        height: 30px;
+        margin-top: 10px;
+        background-color: #f90;
+        border: 1px solid darken($color: #ff9900, $amount: 10%);
+        border-radius: 20px;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            background-color: #404040;
+            border-radius: 25px;
+            transform: translate(0%, -50%);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 25px;
+            background-color: darken($color: #ff9900, $amount: 10%);
+            border-radius: 25px;
             transform: translate(-50%, -50%);
         }
-
     }
 }
-
 
 
 .footer {
