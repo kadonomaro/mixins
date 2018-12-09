@@ -42,6 +42,7 @@ body {
         &__link {
             @include flex-columns(12, 12, 0px);
             padding: 20px;
+            border: 0;
         }
 
 
@@ -80,6 +81,43 @@ body {
         @include flex-columns(12, 12, 10px);
     }
 }
+
+.form {
+    
+
+    &__label {
+        position: relative;
+
+    }
+    &__check:checked + &__check-fake::before {
+       display: block; 
+    }
+    &__check-fake {
+        position: absolute;
+        top: 0;
+        right: -10px;
+        width: 30px;
+        height: 30px;
+        background-color: #f90;
+        border: 1px solid darken($color: #ff9900, $amount: 20%);
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: none;
+            width: 20px;
+            height: 20px;
+            background-color: #303030;
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+}
+
+
+
 .footer {
     flex-grow: 0;
     width: 100%;
