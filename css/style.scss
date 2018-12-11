@@ -219,6 +219,7 @@ body {
         padding: 20px 10px;
         background-color: #aaa;
         border-bottom: 1px solid #404040;
+        transition: background-color 0.3s;
         &::after {
             content: '';
             position: absolute;
@@ -229,6 +230,10 @@ body {
             right: 10px;
             background: url('../img/minus.png') no-repeat;
             transform: translate(0, -50%);
+        }
+        &:hover {
+            cursor: pointer;
+            background-color: darken(#aaa, 5%);
         }
     }
 
@@ -244,6 +249,12 @@ body {
 
     &__content {
         padding: 20px 10px;
+        overflow: hidden;
+        transition: all 0.3s;
+    }
+    &__content_closed {
+        max-height: 0;
+        padding: 0 10px;
     }
 }
 

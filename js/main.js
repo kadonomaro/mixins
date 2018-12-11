@@ -8,12 +8,14 @@ $(document).ready(function(){
 });
 
 
-// window.onload = function () {
-//     var accToggle = document.querySelectorAll('.accordion__head');
+window.onload = function () {
+    var accToggle = document.querySelectorAll('.accordion__head');
 
-//     accToggle.forEach(element => {
-//         element.addEventListener('click', function () { 
-//             this.
-//         });
-//     });
-// }
+    accToggle.forEach(element => {
+        element.addEventListener('click', function () { 
+            this.classList.toggle('accordion__head_closed');
+            this.nextElementSibling.classList.toggle('accordion__content_closed');
+
+        });
+    });
+}
