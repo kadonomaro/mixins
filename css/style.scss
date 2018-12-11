@@ -1,5 +1,7 @@
 @import 'mixins';
-
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
 html {
     height: 100%;
 }
@@ -84,6 +86,7 @@ body {
 
 .form {
     display: flex;
+    margin-bottom: 30px;
     padding: 20px;
     background-color: #808080;
 
@@ -174,11 +177,16 @@ body {
         }
     }
 }
+.card-wrapper {
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
 .card-slider {
     
 }
 .card {
-    border: 1px solid salmon;
+    background-color: #959595;
+    transition: transform 0.7s;
     &__photo {
         
     }
@@ -194,6 +202,51 @@ body {
 
     }
 }
+
+
+.accordion {
+    max-width: 50%;
+
+    &__item {
+        background-color: #fff;
+        border: 1px solid #404040;
+        &:not(:last-child) {
+            border-bottom: 0;
+        }
+    }
+    &__head {
+        position: relative;
+        padding: 20px 10px;
+        background-color: #aaa;
+        border-bottom: 1px solid #404040;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 32px;
+            height: 32px;
+            top: 50%;
+            right: 10px;
+            background: url('../img/minus.png') no-repeat;
+            transform: translate(0, -50%);
+        }
+    }
+
+    &__head_closed {
+        &::after {
+            background: url('../img/plus.png') no-repeat;
+        }
+    }
+
+    &__title {
+        
+    }
+
+    &__content {
+        padding: 20px 10px;
+    }
+}
+
 
 .footer {
     flex-grow: 0;

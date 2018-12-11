@@ -1,3 +1,7 @@
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
 html {
   height: 100%;
 }
@@ -119,6 +123,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: 30px;
   padding: 20px;
   background-color: #808080;
 }
@@ -224,8 +229,17 @@ body {
           transform: translate(-50%, -50%);
 }
 
+.card-wrapper {
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
 .card {
-  border: 1px solid salmon;
+  background-color: #959595;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
 }
 
 .card__img {
@@ -236,6 +250,47 @@ body {
 
 .card__content {
   text-align: center;
+}
+
+.accordion {
+  max-width: 50%;
+}
+
+.accordion__item {
+  background-color: #fff;
+  border: 1px solid #404040;
+}
+
+.accordion__item:not(:last-child) {
+  border-bottom: 0;
+}
+
+.accordion__head {
+  position: relative;
+  padding: 20px 10px;
+  background-color: #aaa;
+  border-bottom: 1px solid #404040;
+}
+
+.accordion__head::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  right: 10px;
+  background: url("../img/minus.png") no-repeat;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.accordion__head_closed::after {
+  background: url("../img/plus.png") no-repeat;
+}
+
+.accordion__content {
+  padding: 20px 10px;
 }
 
 .footer {
