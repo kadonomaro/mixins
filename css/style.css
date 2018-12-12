@@ -254,6 +254,7 @@ body {
 
 .accordion {
   max-width: 50%;
+  margin-bottom: 30px;
 }
 
 .accordion__item {
@@ -306,6 +307,49 @@ body {
 .accordion__content_closed {
   max-height: 0;
   padding: 0 10px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -20px;
+}
+
+.row__title {
+  margin-bottom: 10px;
+  padding: 10px 0;
+  background-color: seagreen;
+}
+
+.row__main {
+  min-height: 700px;
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 300px;
+          flex: 3 1 300px;
+  margin: 0 20px;
+  padding: 10px;
+  background-color: palegreen;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.row__side {
+  min-height: 700px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  margin: 0 20px;
+  padding: 10px;
+  background-color: darkseagreen;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.row__side_size_large {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
 }
 
 .footer {

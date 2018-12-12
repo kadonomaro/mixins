@@ -206,6 +206,7 @@ body {
 
 .accordion {
     max-width: 50%;
+    margin-bottom: 30px;
 
     &__item {
         background-color: #fff;
@@ -258,6 +259,38 @@ body {
     }
 }
 
+
+.row {
+    display: flex;
+    margin: 0 -20px;
+    &__title {
+        margin-bottom: 10px;
+        padding: 10px 0;
+        background-color: seagreen;
+    }
+    &__main {
+        // width: 70%;
+        min-height: 700px;
+        flex: 3 1 300px;
+        margin: 0 20px;
+        padding: 10px;
+        background-color: palegreen;
+        transition: all 0.5s;
+    }
+    &__side {
+        // width: 30%;
+        min-height: 700px;
+        flex: 1 1 300px;
+        margin: 0 20px;
+        padding: 10px;
+        background-color: darkseagreen;
+        transition: all 0.5s;
+        
+    }
+    &__side_size_large {
+        flex-grow: 3;
+    }
+}
 
 .footer {
     flex-grow: 0;

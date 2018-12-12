@@ -12,10 +12,17 @@ window.onload = function () {
     var accToggle = document.querySelectorAll('.accordion__head');
 
     accToggle.forEach(element => {
-        element.addEventListener('click', function () { 
+        element.addEventListener('click', function (evt) {
+            evt.preventDefault();
             this.classList.toggle('accordion__head_closed');
             this.nextElementSibling.classList.toggle('accordion__content_closed');
 
         });
+    });
+
+    var column = document.querySelector('.row__side');
+
+    column.addEventListener('click', function () {
+        column.classList.toggle('row__side_size_large');
     });
 }
