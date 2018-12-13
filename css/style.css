@@ -313,7 +313,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 -20px;
+  margin: 0 -20px 30px;
 }
 
 .row__title {
@@ -356,6 +356,7 @@ body {
   position: relative;
   width: 500px;
   height: 700px;
+  margin-bottom: 30px;
 }
 
 .flip:hover .flip__front {
@@ -375,6 +376,7 @@ body {
   left: 0;
   right: 0;
   background-color: #f99;
+  border-radius: 20px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform: perspective(1000px) rotateY(0deg);
@@ -383,6 +385,7 @@ body {
   transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
   transition: transform 0.7s, -webkit-transform 0.7s;
+  overflow: hidden;
 }
 
 .flip__img {
@@ -397,6 +400,7 @@ body {
   right: 0;
   text-align: center;
   background-color: #ff0;
+  border-radius: 20px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform: perspective(1000px) rotateY(180deg);
@@ -405,10 +409,32 @@ body {
   transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
   transition: transform 0.7s, -webkit-transform 0.7s;
+  overflow: hidden;
 }
 
 .flip__social {
   border-radius: 50%;
+}
+
+.filter {
+  margin: 0 -10px 30px;
+}
+
+.filter__img {
+  margin: 10px;
+  display: inline-block;
+  -webkit-filter: blur(0);
+          filter: blur(0);
+  -webkit-transition: opacity 0.5s, -webkit-filter 0.5s;
+  transition: opacity 0.5s, -webkit-filter 0.5s;
+  transition: filter 0.5s, opacity 0.5s;
+  transition: filter 0.5s, opacity 0.5s, -webkit-filter 0.5s;
+}
+
+.filter__img:hover {
+  -webkit-filter: blur(100px);
+          filter: blur(100px);
+  opacity: 0;
 }
 
 .footer {
