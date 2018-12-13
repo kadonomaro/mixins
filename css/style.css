@@ -324,9 +324,9 @@ body {
 
 .row__main {
   min-height: 700px;
-  -webkit-box-flex: 3;
-      -ms-flex: 3 1 300px;
-          flex: 3 1 300px;
+  -webkit-box-flex: 4;
+      -ms-flex: 4 1 30%;
+          flex: 4 1 30%;
   margin: 0 20px;
   padding: 10px;
   background-color: palegreen;
@@ -337,8 +337,8 @@ body {
 .row__side {
   min-height: 700px;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 300px;
-          flex: 1 1 300px;
+      -ms-flex: 1 1 30%;
+          flex: 1 1 30%;
   margin: 0 20px;
   padding: 10px;
   background-color: darkseagreen;
@@ -347,9 +347,68 @@ body {
 }
 
 .row__side_size_large {
-  -webkit-box-flex: 3;
-      -ms-flex-positive: 3;
-          flex-grow: 3;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
+}
+
+.flip {
+  position: relative;
+  width: 500px;
+  height: 700px;
+}
+
+.flip:hover .flip__front {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+          transform: perspective(1000px) rotateY(-180deg);
+}
+
+.flip:hover .flip__back {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+}
+
+.flip__front {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #f99;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.flip__img {
+  text-align: center;
+}
+
+.flip__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: #ff0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: perspective(1000px) rotateY(180deg);
+          transform: perspective(1000px) rotateY(180deg);
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.flip__social {
+  border-radius: 50%;
 }
 
 .footer {
