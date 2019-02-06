@@ -25,7 +25,7 @@ body {
     text-align: center;
 
     &__link {
-        @include flex-columns(12, 2, 0px);
+        @include flex-columns(2, 0px);
         padding: 10px;
         text-decoration: none;
         color: whitesmoke;
@@ -42,7 +42,7 @@ body {
     .nav {
         flex-direction: column;
         &__link {
-            @include flex-columns(12, 12, 0px);
+            @include flex-columns(12, 0px);
             padding: 20px;
             border: 0;
         }
@@ -65,7 +65,7 @@ body {
 }
 
 .box {
-    @include flex-columns(12, 6, 10px);
+    @include flex-columns(6, 10px);
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid darken($color: #ff9900, $amount: 10%);
@@ -80,7 +80,7 @@ body {
 
 @include media(767) {
     .box {
-        @include flex-columns(12, 12, 10px);
+        @include flex-columns(12, 10px);
     }
 }
 

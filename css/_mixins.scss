@@ -1,5 +1,5 @@
 
-@mixin flex-columns($colCount, $currentColCount, $margin: 0px) {
+@mixin flex-columns($currentColCount, $margin: 0px, $colCount: 12) {
     flex-basis: calc((100% / #{$colCount} * #{$currentColCount}) - (#{$margin} * 2));
     max-width: calc((100% / #{$colCount} * #{$currentColCount}) - (#{$margin} * 2));
     margin-right: $margin;
