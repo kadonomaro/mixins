@@ -25,4 +25,11 @@ window.onload = function () {
     column.addEventListener('click', function () {
         column.classList.toggle('row__side_size_large');
     });
+
+    let big = document.getElementById('big');
+    window.addEventListener('scroll', function () {
+        
+    });
+    
+
 }
