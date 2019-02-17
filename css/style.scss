@@ -418,6 +418,29 @@ body {
 
 }
 
+
+.soap {
+    position: relative;
+    min-height: 50vh;
+    overflow: hidden;
+    &__background {
+        position: absolute;
+        z-index: 1;
+        top: -5%;
+        bottom: -5%;
+        left: -5%;
+        right: -5%;
+        background-image: url('../img/mountains.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__background_additional {
+        z-index: 0;
+        background-image: url('../img/clouds.webp');
+    }
+}
+
+
 .footer {
     flex-grow: 0;
     padding: 20px 20px;

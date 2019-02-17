@@ -36,5 +36,22 @@ window.onload = function () {
                                         top ${(big.offsetTop - window.pageYOffset) /3.5}px left 140px`;
     });
     
-    // mainTitle.style.transform = `translateY(${window.pageYOffset / 2}px)`;
+
+    function parallax (backgroundArr) {
+    
+        let backgrounds = document.querySelectorAll(backgroundArr);
+        backgrounds[0].addEventListener('mousemove', function (evt) {
+            
+            let coordX = (evt.clientX / window.innerWidth * 100 - 50).toFixed(0);
+            let coordY = (evt.clientY / window.innerHeight * 100 - 50).toFixed(0);
+            for (let i = 0; i < backgrounds.length; i++) {
+                backgrounds[i].style = `transform: translate(${coordX / backgrounds[i].dataset.divider}%, ${coordY / backgrounds[i].dataset.divider}%)`;
+                
+            }
+        });
+    };
+
+    parallax('.soap__background');
+
+
 }
